@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greenline Poribohon</title>
+    <title>Greenline Paribahan</title>
 
        <!-- daisu ui -->
  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -188,7 +188,7 @@
                           <div class="flex">
                           
 
-                            <button class="btn bg-green-200 text-lg font-medium"><img src="./images/seat-green.png" alt=""><p><span>40</span> seat available</p></button>
+                            <button class="btn bg-green-200 text-lg font-medium"><img src="./images/seat-green.png" alt=""><p><span id="availableSeat">40</span> seat available</p></button>
 
                           </div>
 
@@ -408,7 +408,7 @@
                     <div class="card w-full bg-[#F7F8F8] mt-5">
 
                         <div class="flex justify-between px-3 pb-3 pt-2">
-                            <h1 class="font-medium">Seat <span></span></h1>
+                            <h1 class="font-medium">Seat <span id="sideSeatNum" class="bg-green-500 px-2 rounded-lg text-sm text-white">0</span></h1>
 
                             <h2 class="font-medium">Class</h2>
 
@@ -417,30 +417,38 @@
                         </div>
 
                         <hr>
-
-                        <div class=" px-3 text-gray-600">
-                           <p>hdsjfh</p>
-                           <p>jdhfj</p>
-
+                        <div id="seatShow" class=" px-3 text-gray-600">
+                    
+                  
                         </div>
                         <hr>
 
                         <div class="flex justify-between px-3 pt-3">
                             <h1 class="font-semibold">Total Price</h1>
 
-                            <h1 class="font-semibold">BDT <span>5</span></h1>
+                            <h1 class="font-semibold">BDT <span id="totalPrice">0</span></h1>
                         </div>
 
-                        <label class="input flex items-center gap-2 mt-3">
-                            <input type="text" placeholder="Have you any coupone?" />
-                            <span class=" badge-info bg-green-500 rounded-lg px-5 py-2 text-white">Apply</span>
+
+                        <!-- discount -->
+
+                        <div id="disDiv" class="flex justify-between px-3 pt-3 hidden">
+
+                          <h1 class="font-semibold">Discount Price</h1>
+
+                          <h1 class="font-semibold">BDT <span id="discountPrice">0</span></h1>
+                      </div>
+
+                        <label id="inputDiv" class="input flex items-center gap-2 mt-3">
+                            <input id="couponInput" type="text" placeholder="Have you any coupon?" />
+                            <button id="applyButton" class=" badge-info bg-green-500 rounded-lg px-5 py-2 text-white">Apply</button>
                           </label>
 
 
                           <div class="flex justify-between px-3 pt-2 pb-5">
                             <h1 class="font-semibold">Grand Total</h1>
 
-                            <h1 class="font-semibold">BDT <span>5</span></h1>
+                            <h1 class="font-semibold">BDT <span id="grandTotal">5</span></h1>
                         </div>
                         
                            
@@ -453,7 +461,7 @@
 
                     <h1 class="mt-2 font-semibold">Phone Number*: </h1>
 
-                    <input type="text" placeholder="Your Phone Number" class=" border-2 border-gray-200 rounded-lg h-10 w-full pl-5 mt-2" />
+                    <input id="numberInput" type="number" placeholder="Your Phone Number" class=" border-2 border-gray-200 rounded-lg h-10 w-full pl-5 mt-2" />
 
 
                     <h1 class="mt-2 font-semibold">Email ID: </h1>
@@ -461,9 +469,47 @@
                     <input type="email" placeholder="Your Email Id" class=" border-2 border-gray-200 rounded-lg h-10 w-full pl-5 mt-2" />
 
 
-                    <button class="btn mt-5 w-full bg-green-500 text-white">Next</button>
 
-                    <div class="flex justify-between p-5">
+                    <!-- modal -->
+
+                     
+                    <!-- Open the modal using ID.showModal() method -->
+                        <div class="">
+
+
+                          <button disabled id="modalButton" class="btn mt-5 w-full bg-green-500 text-white " onclick="my_modal_5.showModal()">Next</button>
+
+
+                          <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                            <div class="modal-box flex flex-col justify-center items-center gap-2">
+ 
+ 
+                             <div> <img class="h-1/2 w-1/2" src="./images/success.png" alt=""></div>
+ 
+ 
+                             <div>
+                               <h1 class="font-semibold text-center">Thank you for Booking Our Bus Seats. <br>
+                                 We are working hard to find the best service and deals for you.</h1>
+ 
+                                 <p class="text-center text-gray-500">Shortly you will find a confirmation in your email.</p>
+                             </div>
+ 
+                             <div>
+                               <button class="btn bg-green-500 w-full  rounded-3xl text-white px-10">Continue</button>
+                             </div>
+ 
+ 
+                              </div>
+                            </div>
+                          </dialog>
+
+                          
+
+                        </div>
+
+                            <!-- terms section -->
+
+                         <div class="flex justify-between p-5">
                         <div>
                             <p class="text-xs text-gray-500">Terms and Conditions</p>
                             <hr>
@@ -473,7 +519,7 @@
                             <p class="text-xs text-gray-500">Cancelletion Policy</p>
                             <hr>
                         </div>
-                    </div>
+                         </div>
 
                     </div>
 
@@ -498,6 +544,8 @@
        
 
     </main>
+
+    <script src="./script.js"></script>
 
 </body>
 </html>
