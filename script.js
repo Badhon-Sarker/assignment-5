@@ -67,7 +67,7 @@ let seatAvailable = parseInt(document.getElementById("availableSeat").innerText)
 
         const p = document.createElement("div")
 
-        p.innerText = `${seatNumber}    Ecomomic    550` 
+        p.innerText = `${seatNumber}    Economoy    550` 
 
         // p.innerText = `<div class="flex justify-between">
         // <p> ${seatNumber} </p>
@@ -173,12 +173,7 @@ let seatAvailable = parseInt(document.getElementById("availableSeat").innerText)
       
       
             
-                      }
-      
-      
-      
-      
-                      else if(couponCode === 'Couple 20') {
+                      }  else if(couponCode ===  'Couple 20') {
       
                                 const price = tp.innerText
          
@@ -241,6 +236,9 @@ let seatAvailable = parseInt(document.getElementById("availableSeat").innerText)
                              inputDiv.classList.add('hidden')
                         
                           
+                      }else{
+                        alert('Please provide a valid coupon code.')
+                        
                       }
       
           
