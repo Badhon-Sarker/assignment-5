@@ -310,6 +310,10 @@ let seatAvailable = parseInt(document.getElementById("availableSeat").innerText)
             
 
          
+     }else if(checkItemNum > 3){
+
+      alert('You have already reached maximum number')
+
      }
 
 
@@ -327,7 +331,3 @@ let seatAvailable = parseInt(document.getElementById("availableSeat").innerText)
    
 
  }
-
-
-
-
