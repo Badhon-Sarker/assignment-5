@@ -297,6 +297,14 @@ let seatAvailable = parseInt(document.getElementById("availableSeat").innerText)
                          
           
                             }
+
+
+                            const mdlbtn =document.getElementById("modalbuttonCont")
+
+                            mdlbtn.addEventListener("click", function reload(e){
+
+                              window.location.reload()
+                            })
           
         })
             
