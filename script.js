@@ -65,17 +65,32 @@ let seatAvailable = parseInt(document.getElementById("availableSeat").innerText)
 
         const showPlace = document.getElementById('seatShow');
 
-        const p = document.createElement("div")
+        const li = document.createElement("li")
 
-        p.innerText = `${seatNumber}    Economoy    550` 
+        const p = document.createElement("p")
 
-        // p.innerText = `<div class="flex justify-between">
-        // <p> ${seatNumber} </p>
-        // <p> Econimic </p>
-        // <p> 550 </p>
-        // <div>;`
-         
-        showPlace.appendChild(p)
+        p.innerText = seatNumber;
+
+
+        const p1 = document.createElement("p")
+
+        p1.innerText ="Economy"
+
+
+        const p2 = document.createElement("p")
+
+        p2.innerText = "550"
+
+
+        showPlace.appendChild(li)
+
+        li.appendChild(p)
+
+        li.appendChild(p1)
+
+        li.appendChild(p2)
+
+        
 
 
         // total price
